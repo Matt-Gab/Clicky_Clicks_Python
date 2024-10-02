@@ -34,6 +34,7 @@ def Auto_Clicker():
     elif Duration:
         Duration = 0
         Coins = Coins + (Auto_Clicker_Amount * 10)
+
     return Duration
 
 def Clicker():
@@ -44,6 +45,7 @@ def Clicker():
         Coins += Clicker_Amount
         Use_Clicker = False
     Hitbox_Clicker = pygame.draw.circle(Display, Blue, [400, 260], 60)
+
     return Hitbox_Clicker
 
 def Buy_Button(X_Coords, Y_Coords):
@@ -60,11 +62,13 @@ def Buy_Button(X_Coords, Y_Coords):
         Auto_Clicker_Cost = Auto_Clicker_Cost * 1.5
         Auto_Clicker_Amount = Auto_Clicker_Amount + 0.5
         Use_Buy_Auto_Clicker = False
+
     if Use_Buy_Clicker and Coins >= Clicker_Cost:
         Coins -= Clicker_Cost
         Clicker_Cost = Clicker_Cost * 1.5
         Clicker_Amount = Clicker_Amount * 1.1
         Use_Buy_Clicker = False
+
     Hitbox_Buy_Button = pygame.draw.rect(Display, Blue, (X_Coords, Y_Coords, 200, 300))
     return Hitbox_Buy_Button
 
